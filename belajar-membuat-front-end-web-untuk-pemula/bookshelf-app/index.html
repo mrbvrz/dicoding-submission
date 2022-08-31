@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://kit.fontawesome.com/0df8752d3f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1><i class="fa-solid fa-book-bookmark fa-xs mr6"></i>Bookshelf Apps.</h1>
+        </header>
+
+        <div class="top">
+            <div class="form-container">
+                <h2 class="title">Tambah Buku Baru </h2>
+                <form id="formDataBuku" action="" method="post" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <input type="text" name="judul" id="judul" placeholder="" required oninvalid="this.setCustomValidity('Masukkan judul buku')"
+                        oninput="this.setCustomValidity('')">
+                        <label for="judul">Judul</label>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <input type="text" name="penulis" id="penulis" placeholder="" required oninvalid="this.setCustomValidity('Masukkan penulis')"
+                            oninput="this.setCustomValidity('')">
+                            <label for="penulis">Penulis</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="tahun" id="tahun" placeholder="" min="1900" require oninvalid="this.setCustomValidity('Enter User Name Here')"
+                            oninput="this.setCustomValidity('')">
+                            <label for="tahun">Tahun</label>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <label for="isRead" class="container">Sudah selesai dibaca
+                            <input type="checkbox" name="isRead" id="isRead">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn"><i class="fa-solid fa-floppy-disk mr6"></i>Simpan</button>
+                </form>
+            </div>
+            <div class="cari-container">
+                <h2 class="title">Cari Buku</h2>
+                <form id="formSearch" action="" method="post">
+                    <div class="form-group">
+                        <input type="text" name="pencarian" id="pencarian" placeholder="">
+                        <label for="pencarian">Cari Buku</label>
+                    </div>
+                    <div class="form-search-bottom">
+                        <button type="reset" class="reset-btn"><i
+                                class="fa-solid fa-broom fa-xs mr6"></i>Bersih</button>
+                        <button type="submit" class="cari-btn"><i
+                                class="fa-solid fa-magnifying-glass fa-xs mr6"></i>Cari</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="left-container">
+                <h2 class="title">Buku Belum Dibaca</h2>
+                <div id="belumDibaca">
+                </div>
+            </div>
+            <div class="right-container">
+                <h2 class="title">Buku Sudah Dibaca</h2>
+                <div id="sudahDibaca">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
